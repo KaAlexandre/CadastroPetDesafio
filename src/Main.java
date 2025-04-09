@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner ler = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         int escolha = -1;
 
         while (true) {
@@ -16,14 +16,14 @@ public class Main {
             System.out.println("6. Sair");
             System.out.print("Escolha uma opção: ");
 
-            if (ler.hasNextInt()) {
-                escolha = ler.nextInt();
-                ler.nextLine();
+            if (scanner.hasNextInt()) {
+                escolha = scanner.nextInt();
+                scanner.nextLine();
                 if (escolha >= 1 && escolha <= 6) {
                     break;
                 }
             } else {
-                ler.nextLine();
+                scanner.nextLine();
             }
 
             System.out.println("Opção inválida! Tente novamente.\n");
@@ -44,6 +44,6 @@ public class Main {
 
 
 //
-        ler.close();
+        scanner.close();
     }
 }
