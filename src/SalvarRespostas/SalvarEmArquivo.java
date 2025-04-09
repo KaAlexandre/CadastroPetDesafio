@@ -32,9 +32,13 @@ public class SalvarEmArquivo {
 
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivo))) {
+            int i = 0;
             for (String resposta : respostas.values()) {
-                writer.write(resposta);
+                i++;
+                writer.write(i+" - "+resposta);
+
                 writer.newLine();
+
             }
             System.out.println("Arquivo salvo com sucesso: " + arquivo.getAbsolutePath());
         } catch (IOException e) {
