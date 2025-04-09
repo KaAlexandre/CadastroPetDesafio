@@ -1,20 +1,15 @@
+import SalvarRespostas.SalvarEmArquivo;
 import validacoes.ValidarEntradas;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.HashMap;
+import java.io.*;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import Enum.SexoPet;
-import Enum.TipoPet;
-
 public class PrintForm {
 
     ValidarEntradas validarEntradas = new ValidarEntradas();
+    SalvarEmArquivo salvarEmArquivo = new SalvarEmArquivo();
 
     public Map<String, String> printForm() {
         File file = new File("formulario.txt");
@@ -62,6 +57,9 @@ public class PrintForm {
         } catch (IOException e) {
             System.err.println("Erro ao ler o arquivo: " + e.getMessage());
         }
+
+        salvarEmArquivo.salvarRespostasEmArquivo(respostas);
         return respostas;
     }
+
 }
